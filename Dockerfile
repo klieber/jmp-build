@@ -1,8 +1,7 @@
-FROM ubuntu:18.04
+FROM ubuntu:22.04
 RUN apt-get update \
-    && apt-get install -y openjdk-11-jdk ruby build-essential patch ruby-dev zlib1g-dev liblzma-dev \
-    && gem update --system --no-document \
-    && gem install bundler:2.1.4 --no-document \
+    && apt-get install -y openjdk-17-jdk ruby build-essential patch ruby-dev zlib1g-dev liblzma-dev \
+    && gem install bundler:2.3.20 --no-document \
     && rm -rf /var/lib/apt/lists/*
 RUN apt-get update \
     && apt-get install -y apt-transport-https ca-certificates curl gnupg --no-install-recommends \
